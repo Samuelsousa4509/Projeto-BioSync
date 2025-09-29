@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/formulario/css/form.css">
+    <title>formulario da calculadora</title>
+</head>
+<body>
+    <h1>🌱 BioSync - Calculadora de CO₂</h1>
+
+    <form id="question-co2">
+        <h3>Seu transporte</h3>
+        <div class="grupo">
+            <label for="kmcarro">Quantos km de carro por semana?</label>
+            <input type="number" id="kmcarro" placeholder="Ex: 100" required min="0"> <br>
+
+            <label for="kmmoto">Quantos km de moto por semana?</label>
+            <input type="number" id="kmmoto" placeholder="Ex: 50" required min="0">
+        </div>
+
+        <div class="grupo">
+            <label for="fuel">Qual o combustível principal?</label>
+            <select id="fuel">
+                <option value="gasolina">Gasolina</option>
+                <option value="etanol">Etanol</option>
+                <option value="diesel">Diesel</option>
+            </select>
+        </div>
+
+        <div class="grupo">
+            <h3>Sua casa</h3>
+
+            <label>Consumo de energia(KWh/mês)?</label>
+            <input type="number" id="kwhmes" placeholder="Ex: 200" required min="0"> <br>
+            <small>*Encontre na sua conta de luz</small> <br>
+
+            <label>Quantos BOTIJÕES de gás por mês? <span>(opcional)</span></label>
+            <select id="botijoesmes">
+                <option value="0">Nenhum</option>
+                <option value="1">1 botijão</option>
+                <option value="2">2 botijões</option>
+                <option value="3">3 ou mais</option>
+            </select>
+        </div>
+
+        <div class="grupo">
+            <h3>Sua alimentação</h3>
+
+            <label>Quanto você gasta com alimentos(R$/Mês)?</label>
+            <input type="number" id="foodmes" placeholder="Ex: 150" required min="0"> <br>
+
+            <label>Qual seu tipo de Dieta?</label>
+            <select id="tipodieta" required>
+                <option value="muitacarne">Como carne quase todo dia</option>
+                <option value="poucacarne">Como carne 2-3 vezes por semana</option>
+                <option value="vegetariana">Vegetariano(a)</option>
+                <option value="vegana">Vegano(a)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="calcular">Calcular meu consumo</button> <br>
+        <button onclick="voltarhomepage()">Voltar para o início</button>
+    </form>
+
+    <script>
+        function voltarhomepage() {
+            location.href = '/home page/home.html';
+        }
+    </script>
+</body>
+</html>
