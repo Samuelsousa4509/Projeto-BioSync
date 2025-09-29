@@ -1,0 +1,122 @@
+
+							*Cronograma do Projeto: BioSync*
+
+**Metodologia:** Dividir o projeto em **Sprints** (etapas) semanais, com um objetivo claro por semana.
+
+
+ **SEMANA 1: FUNDAÇÃO & PLANEJAMENTO**
+**Objetivo:** Ter todo o planejamento pronto e a estrutura básica do HTML/CSS.
+
+*   **Dia 1: Definição Final e Setup**
+    *   Escolher o nome final do projeto.
+    *   Criar uma pasta no computador para o projeto.
+    *   Criar os arquivos básicos: `index.html`, `questionario.html`, `resultado.html`, `style.css`, `script.js`, `resultado.js`.
+    *   Configurar um ambiente de teste (pode ser simplesmente abrir os arquivos no navegador).
+
+*   **Dia 2: Pesquisa e Definição de Escopo**
+    *   Pesquisar e definir os **fatores de emissão** que você vai usar (os valores de CO₂ por km, kWh, etc.). Anote esses valores em um bloco de notas ou num arquivo `dados.txt`.
+    *   **Decidir QUAIS categorias e perguntas** estarão na VERSÃO 1. **Dica:** Comece com as 3 principais: Transporte, Casa e Alimentação. Não tente fazer tudo de uma vez.
+
+*   **Dia 3: Estrutura HTML (Página Inicial e Questionário)**
+    *   Codificar a `index.html` com uma introdução atraente e um botão para iniciar.
+    *   Codificar o esqueleto do formulário em `questionario.html`, com todas as perguntas que você definiu.
+
+*   **Dia 4: Estilização Básica (CSS)**
+    *   Focar em fazer o site ficar visualmente limpo e funcional.
+    *   Aplicar cores, fontes e um layout simples. Tornar o site **responsivo** (que se adapta ao celular) desde o início é uma ótima prática.
+
+*   **Dia 5: Revisão da Semana**
+    *   Testar os links entre as páginas.
+    *   Garantir que o formulário aparece corretamente no computador e no celular.
+    *   **Meta da Semana 1:** Ter um site estático (sem funcionalidade) mas com boa aparência.
+
+---
+
+### **SEMANA 2: LÓGICA PRINCIPAL (JAVASCRIPT)**
+**Objetivo:** A calculadora deve funcionar e gerar um número correto.
+
+*   **Dia 1: Capturar Dados do Formulário**
+    *   No `script.js`, escrever o código para "escutar" quando o formulário for enviado.
+    *   Usar `console.log()` para verificar se está capturando os valores dos campos corretamente.
+
+*   **Dia 2: Implementar a Função de Cálculo (Parte 1)**
+    *   Criar a variável `totalCO2`.
+    *   Implementar o cálculo para a primeira categoria (ex: Transporte).
+    *   Testar apenas com essa categoria.
+
+*   **Dia 3: Implementar a Função de Cálculo (Parte 2)**
+    *   Adicionar os cálculos para as demais categorias (Casa, Alimentação).
+    *   Fazer testes inserindo valores conhecidos e verificando se o resultado faz sentido.
+
+*   **Dia 4: Passar o Resultado para a Página de Resultados**
+    *   Usar `localStorage.setItem()` para salvar o resultado.
+    *   Configurar o redirecionamento para `resultado.html` após o cálculo.
+
+*   **Dia 5: Exibir o Resultado**
+    *   No `resultado.js`, usar `localStorage.getItem()` para recuperar o valor.
+    *   Exibir o valor na tela de forma simples (ex: "Sua pegada é: X kg de CO₂e").
+    *   **Meta da Semana 2:** Ter uma calculadora funcional que gera um número.
+
+---
+
+### **SEMANA 3: REFINAMENTO E DIFERENCIAIS**
+**Objetivo:** Tornar o projeto mais robusto e interessante.
+
+*   **Dia 1: Desenvolver o Sistema de Dicas Personalizadas**
+    *   Criar a lógica de `if/else` no `resultado.js` para gerar dicas com base nas respostas do usuário.
+    *   Focar em dicas práticas e acionáveis.
+
+*   **Dia 2: Apresentar o Resultado de Forma Visual**
+    *   Em vez de só mostrar um número, criar comparações (ex: "Isso equivale a X árvores plantadas" ou "Y voltas ao mundo de carro").
+    *   Pode usar uma barra de progresso ou um gráfico simples com CSS para mostrar se a pegada é alta, média ou baixa.
+
+*   **Dia 3: Validação de Formulário**
+    *   Impedir que o usuário envie o formulário com campos vazios (ou tratar esses campos como zero).
+    *   Adicionar mensagens de erro amigáveis.
+
+*   **Dia 4: Polimento do CSS**
+    *   Melhorar a aparência das páginas de resultado e dicas.
+    *   Adicionar ícones (usando Font Awesome ou imagens SVG) para deixar o site mais visual.
+
+*   **Dia 5: Testes de Usabilidade**
+    *   Pedir para um amigo ou familiar testar o site.
+    *   Anotar pontos de confusão ou bugs para corrigir.
+    *   **Meta da Semana 3:** Ter um projeto completo, funcional e com valor agregado (dicas e visualizações).
+
+---
+
+### **SEMANA 4: FINALIZAÇÃO E PREPARAÇÃO PARA APRESENTAÇÃO**
+**Objetivo:** Garantir que tudo está perfeito para a entrega.
+
+*   **Dia 1: Correção de Bugs**
+    *   Revisar e corrigir todos os problemas encontrados nos testes.
+    *   Testar em navegadores diferentes (Chrome, Firefox).
+
+*   **Dia 2: Otimização e Performance**
+    *   Verificar se as imagens estão otimizadas.
+    *   Garantir que o código está limpo e comentado.
+
+*   **Dia 3: Preparar a Documentação Básica**
+    *   Criar um arquivo `LEIAME.txt` ou uma seção "Sobre" no site explicando:
+        *   O que é o projeto.
+        *   Como os cálculos foram feitos (cite as fontes dos fatores de emissão).
+        *   Tecnologias utilizadas.
+
+*   **Dia 4: Hospedagem (Deploy)**
+    *   Escolher uma plataforma gratuita como **Vercel**, **Netlify** ou **GitHub Pages**.
+    *   Fazer o deploy do site para ter um link público para apresentar.
+
+*   **Dia 5: Preparar a Apresentação**
+    *   Criar um roteiro curto (3-5 minutos) para demonstrar o site.
+    *   Enfatizar: **O Problema**, **A Solução (seu site)**, **Como Usar** e **O Impacto Potencial**.
+    *   **Meta da Semana 4:** Projeto hospedado e pronto para ser apresentado com confiança.
+
+---
+
+### **Dicas Extras para o Caminho:**
+
+*   **Controle de Versão (Git):** Se você já conhece Git e GitHub, use-os! É a melhor maneira de salvar seu progresso e evitar perder trabalho.
+*   **Checklist Diário:** No final de cada dia, anote o que você fará no próximo. Isso mantém o foco.
+*   **Comemore Pequenas Vitórias:** Conseguir fazer o formulário aparecer? Comemore! Fazer o primeiro cálculo funcionar? Comemore! Isso mantém a motivação alta.
+
+Boa sorte! Siga esse roteiro, e você terá um projeto organizado e de qualidade. Se surgir qualquer obstáculo específico, é só perguntar.
