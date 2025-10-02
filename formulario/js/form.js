@@ -1,13 +1,16 @@
 //fatores de emissao de co2 por categoria
 const fatores = {
-    transporte: {
-        gasolina: 0.19,
-        etanol: 0.11,
-        diesel: 0.16,
-        moto_gasolina: 0.11,
-        moto_etanol: 0.07,
-        moto_diesel: 0.09
-    },
+    transporte:
+        [
+            ['gasolina', 0.19],
+            ['etanol', 0.11],
+            ['diesel', 0.16],
+            ['moto_gasolina', 0.11],
+            ['moto_etanol', 0.07],
+            ['moto_diesel', 0.09]
+        ]
+
+    ,
 
     casa: {
         energia: 0.1,
@@ -41,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function coletardados() {
     return {
-        kmcarro: Number(document.getElementById('kmcarro').value) || 0,
-        kmmoto: Number(document.getElementById('kmmoto').value) || 0,
+        kmcarro: parseFloat(document.getElementById('kmcarro').value) || 0,
+        kmmoto: parseFloat(document.getElementById('kmmoto').value) || 0,
         fuel: document.getElementById('fuel').value,
 
-        kwhmes: Number(document.getElementById('kwhmes').value) || 0,
+        kwhmes: parseFloat(document.getElementById('kwhmes').value) || 0,
         botijoesmes: parseInt(document.getElementById('botijoesmes').value) || 0,
 
 
@@ -58,27 +61,42 @@ function calcularCO2(dados) {
     let total = 0;
 
     if (dados.kmcarro > 0) {
-        const co2carro = dados.kmcarro * fatores.transporte[dados.combustivel] * 52;
-        total += co2carro;
+        for (let i of fatores.transporte) {
+            if (i[0] === dados.fuel) {
+
+                console.log(dados.fuel, i[1])
+                var co2carro = dados.kmcarro * i[1] * 52;
+                total += co2carro;
+            }
+        }
     }
 
     if (dados.kmmoto > 0) {
-        const fatormoto = `moto_${dados.combustivel}`;
-        const co2moto = dados.kmmoto * fatores.transporte[fatormoto] * 52
-        total += co2moto;
+
+        if (dados.kmcarro > 0) {
+            for (let i of fatores.transporte) {
+                if (i[0] === dados.fuel) {
+                console.log(dados.fuel, i)
+
+                    var co2moto = dados.kmmoto * i[1] * 52;
+                    total += co2moto;
+                }
+            }
+        }
     }
 
-    const co2energia = dados.kwhmes * fatores.casa.energia * 12;
+    var co2energia = dados.kwhmes * fatores.casa.energia * 12;
     total += co2energia;
 
     if (dados.botijoesmes > 0) {
-        const co2gas = dados.botijoesmes * fatores.casa.gas * 12;
+        var co2gas = dados.botijoesmes * fatores.casa.gas * 12;
         total += co2gas;
     }
 
-    const co2food = dados.gastofood * fatores.alimentacao[dados.tipodieta] * 12;
+    var co2food = dados.gastofood * fatores.alimentacao[dados.tipodieta] * 12;
     total += co2food;
 
+    console.log(co2carro, co2moto, co2energia, co2gas, co2food)
 
     //console.log(`O total do calculo é igual a: ${Math.round(total)}`);
 
