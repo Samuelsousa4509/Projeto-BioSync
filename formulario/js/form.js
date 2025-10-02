@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const res = calcularCO2(dados);
 
         alert(`Sua pegada de carbono é: ${res} kg CO₂ por ano`);
-
+        
         localStorage.setItem('resultadoco2', res);
         localStorage.setItem('dadosuser', JSON.stringify(dados));
     });
@@ -63,8 +63,6 @@ function calcularCO2(dados) {
     if (dados.kmcarro > 0) {
         for (let i of fatores.transporte) {
             if (i[0] === dados.fuel) {
-
-                console.log(dados.fuel, i[1])
                 var co2carro = dados.kmcarro * i[1] * 52;
                 total += co2carro;
             }
@@ -73,11 +71,10 @@ function calcularCO2(dados) {
 
     if (dados.kmmoto > 0) {
 
-        if (dados.kmcarro > 0) {
+        if (dados.kmmoto > 0) {
             for (let i of fatores.transporte) {
-                if (i[0] === dados.fuel) {
+                if (i[0] === ("moto_"+dados.fuel)) {
                 console.log(dados.fuel, i)
-
                     var co2moto = dados.kmmoto * i[1] * 52;
                     total += co2moto;
                 }
@@ -101,4 +98,8 @@ function calcularCO2(dados) {
     //console.log(`O total do calculo é igual a: ${Math.round(total)}`);
 
     return Math.round(total);
+
+    location.href("res.html")
 }
+
+//para efeito de comparaçao entre os commits!!!
