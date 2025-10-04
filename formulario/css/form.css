@@ -5,9 +5,195 @@
 }
 
 body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c1a1a 0%, #1a2e2e 100%);
+    color: #e0f2f1;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 209vh;
-    height: 100vh;
+    justify-content: center ;
+    padding: 20px;
 }
+
+.question-co2 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-co2 h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    background: linear-gradient(135deg, #1de9b6, #64ffda);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(29, 233, 182, 0.3);   
+    margin: 10px;
+}
+
+.question-co2 h3 {
+    color: #1de9b6;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(29, 233, 182, 0.3);
+    font-size: 1.3em;
+}
+
+.grupo-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grupo {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out;
+    height: fit-content;
+}
+
+.grupo:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(29, 233, 182, 0.3);
+    transform: translate(-2px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px 0;
+    font-weight: 600;
+    color: #80cbc4;
+    font-size: 1em;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0f2f1;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    input:focus, select:focus {
+    outline: none;
+}
+
+    border-color: #1de9b6;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(29, 233, 182, 0.2);
+    transform: scale(1.02);
+}
+
+input::placeholder {
+    color: #a7ffeb;
+    opacity: 0.7;
+}
+
+button {
+    flex: 1;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #1de9b6, #00bfa5);
+    color: #0c1a1a;
+    box-shadow: 0 5px 15px rgba(29, 233, 182, 0.3);
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #00bfa5, #1de9b6);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(29, 233, 182, 0.4);
+}
+
+
+button[type="button"] {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0f2f1;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+button[type="button"]:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: rgba(29, 233, 182, 0.3);
+}
+
+
+small {
+    color: #ffb300;
+    font-size: 0.9em;
+}
+
+.glow-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-effect::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #1de9b6, #00bfa5, #1de9b6);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::before {
+    opacity: 0.3;
+}
+
+.grupo:nth-child(1) {animation-delay: 0.1s;}
+.grupo:nth-child(2) {animation-delay: 0.2s;}
+.grupo:nth-child(3) {animation-delay: 0.3s;}
+.grupo:nth-child(4) {animation-delay: 0.4s;}
