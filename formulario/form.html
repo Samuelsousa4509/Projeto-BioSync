@@ -1,67 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/formulario/css/form.css">
     <title>formulario da calculadora</title>
 </head>
+
 <body>
-    
-    <form id="question-co2">
-        <h1>🌱 BioSync - Calculadora de CO₂</h1>
-        
-        <h3>Seu transporte</h3>
-        <div class="grupo"> 
-            <label for="kmCarro">Quantos km de carro por semana?</label>
-            <input type="number" id="kmcarro" placeholder="Ex: 100" required min="0"> <br>
 
-            <label for="kmMoto">Quantos km de moto por semana?</label>
-            <input type="number" id="kmmoto" placeholder="Ex: 50" required min="0">
+    <form class="question-co2">
+        <h1>BioSync - Calculadora de CO₂</h1>
+
+        <div class="grupo-linha">
+
+            <div class="grupo">
+                <h3>Seu transporte</h3>
+                <div class="campo">
+                    <label for="kmCarro">Quantos km de carro por semana?</label>
+                    <input type="number" id="kmcarro" placeholder="Ex: 100" required min="0">
+                </div>
+
+                <div class="campo">
+                    <label for="kmMoto">Quantos km de moto por semana?</label>
+                    <input type="number" id="kmmoto" placeholder="Ex: 50" required min="0">
+                </div>
+
+                <div class="campo">
+                    <label for="fuel">Qual o combustível principal?</label>
+                    <select id="fuel">
+                        <option value="gasolina">Gasolina</option>
+                        <option value="etanol">Etanol</option>
+                        <option value="diesel">Diesel</option>
+                    </select>
+                </div>
+            </div>
+            <div class="grupo">
+
+                <h3>Sua casa</h3>
+
+                <div class="campo">
+                    <label>Consumo de energia(KWh/mês)?</label>
+                    <input type="number" id="kwhmes" placeholder="Ex: 200" required min="0">
+                    <small>*Encontre na sua conta de luz</small>
+                </div>
+
+                <div class="campo">
+                    <label>Quantos BOTIJÕES de gás por mês? <span>(opcional)</span></label>
+                    <select id="botijoesmes">
+                        <option value="0">Nenhum</option>
+                        <option value="1">1 botijão</option>
+                        <option value="2">2 botijões</option>
+                        <option value="3">3 ou mais</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="grupo">
+                <h3>Sua alimentação</h3>
+
+                <div class="campo">
+                    <label>Quanto você gasta com alimentos(R$/Mês)?</label>
+                    <input type="number" id="foodmes" placeholder="Ex: 150" required min="0">
+                </div>
+
+                <div class="campo">
+                    <label>Qual seu tipo de Dieta?</label>
+                    <select id="tipodieta" required>
+                        <option value="muitacarne">Como carne quase todo dia</option>
+                        <option value="poucacarne">Como carne 2-3 vezes por semana</option>
+                        <option value="vegetarian">Vegetariano(a)</option>
+                        <option value="vegan">Vegano(a)</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
 
-        <div class="grupo">
-            <label for="fuel">Qual o combustível principal?</label>
-            <select id="fuel">
-                <option value="gasolina">Gasolina</option>
-                <option value="etanol">Etanol</option>
-                <option value="diesel">Diesel</option>
-            </select>
-        </div>
-
-        <div class="grupo">
-            <h3>Sua casa</h3>
-
-            <label>Consumo de energia(KWh/mês)?</label>
-            <input type="number" id="kwhmes" placeholder="Ex: 200" required min="0"> <br>
-            <small>*Encontre na sua conta de luz</small> <br>
-
-            <label>Quantos BOTIJÕES de gás por mês? <span>(opcional)</span></label>
-            <select id="botijoesmes">
-                <option value="0">Nenhum</option>
-                <option value="1">1 botijão</option>
-                <option value="2">2 botijões</option>
-                <option value="3">3 ou mais</option>
-            </select>
-        </div>
-
-        <div class="grupo">
-            <h3>Sua alimentação</h3>
-
-            <label>Quanto você gasta com alimentos(R$/Mês)?</label>
-            <input type="number" id="foodmes" placeholder="Ex: 150" required min="0"> <br>
-
-            <label>Qual seu tipo de Dieta?</label>
-            <select id="tipodieta" required>
-                <option value="muitacarne">Como carne quase todo dia</option>
-                <option value="poucacarne">Como carne 2-3 vezes por semana</option>
-                <option value="vegetarian">Vegetariano(a)</option>
-                <option value="vegan">Vegano(a)</option>
-            </select>
-        </div>
-
-        <button type="submit" class="calcular">Calcular meu consumo</button> <br>
-        <button onclick="voltarhomepage()">Voltar para o início</button>
+            <div class="botoes-container">
+                <button type="submit" class="calcular">Calcular meu consumo</button>
+                <button type="button" onclick="voltarhomepage()">Voltar para o início</button>
+            </div>
     </form>
 
     <script>
@@ -72,4 +93,5 @@
 
     <script src="/formulario/js/form.js"></script>
 </body>
+
 </html>
