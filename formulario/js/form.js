@@ -26,7 +26,7 @@ const fatores = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    const formulario = document.getElementById('question-co2');
+    const formulario = document.querySelector('.question-co2');
 
     formulario.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -35,10 +35,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const res = calcularCO2(dados);
 
-        alert(`Sua pegada de carbono é: ${res} kg CO₂ por ano`);
+        //alert(`Sua pegada de carbono é: ${res} kg CO₂ por ano`);
         
         localStorage.setItem('resultadoco2', res);
         localStorage.setItem('dadosuser', JSON.stringify(dados));
+
+        location.href = '/resultado/resultado.html';
     });
 }); //variaveis para pegar dados, salvar dados, fazer calculo,etc
 
@@ -98,8 +100,6 @@ function calcularCO2(dados) {
     //console.log(`O total do calculo é igual a: ${Math.round(total)}`);
 
     return Math.round(total);
-
-    location.href("res.html")
 }
 
 //para efeito de comparaçao entre os commits!!!
