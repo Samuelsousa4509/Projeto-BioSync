@@ -27,3 +27,4 @@ function mostrarResultado(co2) {
     
     elementonumero.textContent = co2.toLocaleString('pt-BR') + 'Kg co2'
 }
+
