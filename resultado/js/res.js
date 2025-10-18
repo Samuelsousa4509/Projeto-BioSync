@@ -1,26 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const resco2 = localStorage.getItem('resultadoco2');
-    const dadosuser = localStorage.getItem('dadosuser');
+    var co2resu = localStorage.getItem('resultadoco2');
+    
+    var co2 = parseInt(co2resu);
 
-    if (!resultadoco2) {
-        alert('Faça o calculo primeiro!');
-        location.href('/formulario/js/form.js');
-        return;
-    }
+    document.getElementById('co2res').textContent = co2.toFixed(2)
 
-    const co2 = parseInt(resultadoco2);
+    console.log(co2.innerHTML = co2 )
     
-    const dados = JSON.parse(dadosuser);
-    
-    mostrarResultado(co2);
-    
-    console.log('resultado:', co2, 'kg co2');
-    console.log('Dados do usuario:', dados);
-    
-    if (co2) {
-        document.querySelector("numero").textContent = `ola, ${co2}`
-    }
 });
 
 function mostrarResultado(co2) {

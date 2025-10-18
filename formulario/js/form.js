@@ -4,7 +4,7 @@ const fatores = {
         [
             ['gasolina', 0.19],
             ['etanol', 0.11],
-            ['diesel', 0.16],
+            ['diesel', 0.16], 
             ['moto_gasolina', 0.11],
             ['moto_etanol', 0.07],
             ['moto_diesel', 0.09]
