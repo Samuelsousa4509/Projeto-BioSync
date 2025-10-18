@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/1-home page/css/home-page.css">
+    <title>Pagina Inicial</title>
+</head>
+<body>
+    <div class="home">
+
+        <div class="left">
+            <h1 id="tlt">BioSync</h1>
+
+            <h2 id="subtlt">Sua calculadora de carbono!</h2>
+
+            <p id="txt">
+                O BioSync é uma calculadora de pegada de carbono que tem como propósito 
+                alertar os usuários sobre o seu consumo de carbono e como esse consumo 
+                pode afetar o meio ambiente.
+            </p>
+        
+            <button onclick="gotoform()" class="button">Iniciar Calculadora</button>
+        </div>
+
+        <div class="right">
+            <img src="/home page/css/logotipo-BioSync-SF.png" alt="">
+        </div>
+    </div>
+
+    
+    <script>
+        function gotoform() {
+            location.href = '/formulario/form.html';
+        }
+    </script>
+</body>
+</html>
