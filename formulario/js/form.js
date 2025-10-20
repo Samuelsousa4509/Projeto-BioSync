@@ -47,8 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
 function coletardados() {
     return {
         kmcarro: parseFloat(document.getElementById('kmcarro').value) || 0,
+        fuelc: document.getElementById('fuelc').value,
         kmmoto: parseFloat(document.getElementById('kmmoto').value) || 0,
-        fuel: document.getElementById('fuel').value,
+        fuelm: document.getElementById('fuelm').value,
 
         kwhmes: parseFloat(document.getElementById('kwhmes').value) || 0,
         botijoesmes: parseInt(document.getElementById('botijoesmes').value) || 0,
@@ -64,7 +65,7 @@ function calcularCO2(dados) {
 
     if (dados.kmcarro > 0) {
         for (let i of fatores.transporte) {
-            if (i[0] === dados.fuel) {
+            if (i[0] === dados.fuelc) {
                 var co2carro = dados.kmcarro * i[1] * 52;
                 total += co2carro;
             }
@@ -75,14 +76,17 @@ function calcularCO2(dados) {
 
         if (dados.kmmoto > 0) {
             for (let i of fatores.transporte) {
-                if (i[0] === ("moto_"+dados.fuel)) {
-                console.log(dados.fuel, i)
+                if (i[0] === ("moto_"+dados.fuelm)) {
+                console.log(dados.fuelm, i)
                     var co2moto = dados.kmmoto * i[1] * 52;
                     total += co2moto;
                 }
             }
         }
     }
+
+    console.log('dados carro', co2carro)
+    console.log('dados moto', co2moto)
 
     var co2energia = dados.kwhmes * fatores.casa.energia * 12;
     total += co2energia;

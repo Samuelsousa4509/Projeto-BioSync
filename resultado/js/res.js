@@ -28,4 +28,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     console.log('result loaded:', co2);
-});
+    console.log(dados.fuelm, i);
+}); 
